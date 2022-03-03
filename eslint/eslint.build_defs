@@ -1,0 +1,8 @@
+def eslint(
+  name: str,
+  srcs: list = [],
+):
+  sh_cmd(
+    name = name,
+    cmd = "ls"
+  )
