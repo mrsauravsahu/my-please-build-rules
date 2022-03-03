@@ -2,7 +2,7 @@ def eslint(
   name: str,
   srcs: list = [],
 ):
-  sh_cmd(
+  return sh_cmd(
     name = name,
     cmd = "ls"
   )
