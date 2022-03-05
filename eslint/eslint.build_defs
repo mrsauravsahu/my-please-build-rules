@@ -1,0 +1,11 @@
+def eslint(
+  name: str
+  ):
+
+  svc = package_name()
+  eslint_pkg = 'plz-out/gen/eslint'
+
+  return sh_cmd(
+    name = name,
+    cmd = f"npm --prefix {eslint_pkg} ci && ./{eslint_pkg}/node_modules/.bin/eslint -c {eslint_pkg}/.eslintrc.json --fix {svc}"
+  )
