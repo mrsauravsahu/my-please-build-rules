@@ -1,0 +1,8 @@
+def lint(name: str = 'lint', args: str = '') -> str:
+  package_folder = package_name().replace('^//', '')
+  cmd = f'cd lint_eslint && (([ ! -d node_modules ] && npm ci) || true) && ./node_modules/.bin/eslint -c ./.eslintrc.json --ext js,ts {args} ../{package_folder}'
+
+  return sh_cmd(
+    name = name,
+    cmd=cmd
+  )
